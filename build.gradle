@@ -19,6 +19,7 @@ sonarqube {
 version project.VERSION
 
 allprojects {
+    apply plugin: "scala"
     apply plugin: "groovy"
     apply plugin: "eclipse"
     apply plugin: "idea"
@@ -34,6 +35,9 @@ allprojects {
     group "thomashan.github.io"
 
     dependencies {
+        compile "org.scala-lang:scala-library:2.12.6"
+        compile "org.threeten:threeten-extra:1.4"
+
         compile("org.codehaus.groovy:groovy-all:2.5.1") {
             exclude(group: "junit")
         }
